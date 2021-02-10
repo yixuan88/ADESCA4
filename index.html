@@ -1,1 +1,109 @@
-<p>yi xuan</p>
+<html>
+
+<head>
+    <!-- Imports -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+        integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"
+        integrity="sha512-zO8oeHCxetPn1Hd9PdDleg5Tw1bAaP0YmNvPY8CwcRyUk7d7/+nyElmFrB6f7vg4f7Fv4sui1mcep8RIEShczg=="
+        crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="./styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="./styles/addTracking.css" />
+    <link type="text/css" rel="stylesheet" href="./styles/loading.css" />
+    <link rel="stylesheet" href="styles/graph.css" />
+
+    <!-- JS -->
+    <script type="text/javascript" src="./scripts/addTracking.js"></script>
+    <script type="text/javascript" src="./scripts/deleteTracking.js"></script>
+    <script type="text/javascript" src="./scripts/searchCompany.js"></script>
+    <script src="scripts/graph.js"></script>
+</head>
+
+<body>
+    <!-- Background -->
+    <div class="bg" style="background-image: url('./img/background.jpg');"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="./img/din tai fung.jpg" alt="Din Tai Fung">
+    </header>
+
+    <!-- Tracking -->
+    <div class="container">
+        <div class="tracking_container" id="tracking">
+            <div class="row1">
+                <div class="input_container">
+                    <div class="company">
+                        <i class="text">Company Id</i>
+                        <div class="searchtxt"><i class="fa fa-search"></i><input type="text" class="companyIdTxt"></div>
+                        <button id="button" name="search">Search</button>
+                    </div>
+                    <div class="error"></div>
+                    <div class="queueid" style="margin-top: 10px;">
+                        <i class="text" style="margin-right: 10px">Queue Id</i>
+                        <div class="searchtxt">
+                            <input type="text" id="queueIdTxt" class="queueIdTxt" readonly />
+                            <div class="dropdown-content" id="dropdown">
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <input id="hide" type="checkbox" checked="true" name="hide" /> Hide Inactive
+                        </div>
+                    </div>
+                </div>
+                <!-- Loader -->
+                <div class="loader">
+                    <div></div>
+                    <div></div>
+                </div>
+                <!-- Close -->
+                <div class="close" onclick="deleteTracking(this.parentNode.parentNode.id)"><i class="fa fa-times"></i>
+                </div>
+            </div>
+            <!-- Graph -->
+            <div class="row2">
+                <div style="width: 80%; height: 80%;" class="graph">
+                    <canvas style="width: 512px; height: 256px" class="myChart"></canvas>
+                </div>
+                <br>
+                <div class="graph_icons">
+                    <div class="lds-ripple">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <br>
+                    <div class="sa">
+                        <div class="sa-warning">
+                            <div class="sa-warning-body"></div>
+                            <div class="sa-warning-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shown_container">
+            <div class="add_container">
+                <button onclick="addTracking()"><i class="fa fa-plus-square"></i>&nbsp; Add Tracking</button>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+/* Tracking */
+.tracking_container {
+    width: 600px;
+    min-height: 100px;
+    height: fit-content;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    border: 3px solid #760b14;
+    margin: 20px;
+}
+
+/* New Trackings */
+.shown_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    justify-content: center;
+}
+
+.row1 {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px auto;
+}
+
+.row2 {
+    display: none;
+    justify-content: center;
+}
+
+.input_container {
+    flex: 5;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    color: #760b14;
+    font-size: 17px;
+}
+
+.input_container div {
+    display: flex;
+    flex-direction: row;
+}
+
+/* text */
+.text {
+    margin: auto 10px;
+}
+
+/* form */
+form {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+/* input type="text" */
+.input_container .searchtxt {
+    border: 2px solid #760b14;
+    padding: 4px;
+    margin-right: 10px;
+}
+
+.searchtxt input, .searchtxt input:focus {
+    width: 120px;
+    border: 0;
+    outline: none;
+}
+
+/* Search Button */
+.company button {
+    color: #760b14;
+    background: transparent;
+    border: 2px solid #760b14;
+    transition: 0.3s;
+}
+
+.company button:hover {
+    color: white;
+    background: #760b14;
+}
+
+/* Error */
+.error {
+    margin: 3px;
+    height: min-content;
+}
+
+.error p {
+    margin: 0;
+    color: #e91627;
+    font-style: italic;
+    font-size: 16px;
+}
+
+/* Dropdown */
+.queueid .searchtxt {
+    position: relative;
+    display: inline-block;
+}
+
+#queueIdTxt {
+    cursor: pointer;
+}
+
+.queueid .searchtxt .dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0px;
+    left: -2px;
+    width: 100%;
+    border: 2px solid #760b14;
+    background-color: #f9f9f9;
+}
+
+.queueid .searchtxt:hover .dropdown-content{
+    display: flex;
+    z-index: 100;
+}
+
+.queueid .searchtxt .dropdown-content a {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.queueid .searchtxt .dropdown-content p {
+    margin: 0;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.queueid .searchtxt .dropdown-content a:hover{
+    background: #760b14;
+    color: white;
+}
+
+/* Checkbox */
+.queueid .checkbox {
+    margin: auto;
+}
+
+/* Close Button */
+.close {
+    flex: 0;
+    float: right;
+    margin-right: 12px;
+    color: #760b14;
+    width: min-content;
+    height: min-content;
+    transition: 0.3s;
+}
+
+.close:hover {
+    background: #760b14;
+    color: white;
+}
+
+/* Add Tracking */
+.add_container button {
+    width: 600px;
+    height: 100px;
+    color: #760b14;
+    font-size: 15px;
+    background: white;
+    border: 3px dashed #760b14;
+    transition: 0.3s;
+    margin: 20px;
+}
+
+.add_container button:hover{
+    color: white;
+    background: #760b14;
+}

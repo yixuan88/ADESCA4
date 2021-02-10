@@ -1,0 +1,142 @@
+.graph {
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.graph_icons {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* Loading Animation */
+.lds-ripple {
+    display: block;
+    visibility: hidden;
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid rgb(255, 141, 75);
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+    0% {
+      top: 25px;
+      left: 25px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+    }
+}
+
+/* Error Icon */
+.sa {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  visibility: hidden;
+  margin: 10px 0 0 10px;
+}
+.sa-warning {
+  border-radius: 50%;
+  border: 4px solid #FF0000;
+  box-sizing: content-box;
+  height: 30px;
+  padding: 0;
+  position: relative;
+  background-color: transparent;
+  width: 30px;
+  animation: scaleWarning 0.75s infinite alternate;
+}
+.sa-warning:after, .sa-warning:before {
+  content: "";
+  border-radius: 50%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.sa-warning:before {
+  display: inline-block;
+  opacity: 0;
+  animation: pulseWarning 2s linear infinite;
+}
+.sa-warning:after {
+  display: block;
+  z-index: 1;
+}
+.sa-warning-body {
+  background-color: #FF0000;
+  border-radius: 2px;
+  height: 15px;
+  left: 50%;
+  margin-left: -1px;
+  position: absolute;
+  top: 3.5px;
+  width: 3px;
+  z-index: 2;
+  animation: pulseWarningIns 0.75s infinite alternate;
+}
+.sa-warning-dot {
+  background-color: #FF0000;
+  border-radius: 50%;
+  bottom: 3px;
+  height: 4px;
+  left: 50%;
+  margin-left: -1.5px;
+  position: absolute;
+  width: 4px;
+  z-index: 2;
+  animation: pulseWarningIns 0.75s infinite alternate;
+}
+
+@keyframes scaleWarning {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulseWarning {
+  0% {
+    background-color: #fff;
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  30% {
+    background-color: #fff;
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    background-color: #FF0000;
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+@keyframes pulseWarningIns {
+  0% {
+    background-color: #FA8072;
+  }
+  100% {
+    background-color: #FF0000;
+  }
+}
